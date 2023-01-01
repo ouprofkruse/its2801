@@ -25,3 +25,16 @@ RUN pip install --quiet --no-cache-dir nbgitpuller \
     jupyterlab_play_cell_button \
     && fix-permissions "${CONDA_DIR}" \
     && fix-permissions "/home/${NB_USER}"
+
+# HK additions for python (based on CS1400 -- Shawn Ostermann)
+RUN pip install numpy \
+	pillow \
+	Matplotlib \
+	plotly \
+	calysto \
+	cairosvg \
+	cairocffi \
+    && fix-permissions "${CONDA_DIR}" \
+    && fix-permissions "/home/${NB_USER}"
+
+    
