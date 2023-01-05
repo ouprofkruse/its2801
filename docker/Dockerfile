@@ -2,6 +2,7 @@ FROM jupyter/minimal-notebook
 
 ARG DOTNET_VERSION=7.0
 ENV DOTNET_ROOT=/opt/dotnet
+ENV DOTNET_KERNELS=/opt/dotnet-kernels
 ENV PATH=${PATH}:${DOTNET_ROOT}:${DOTNET_ROOT}/tools
 
 USER root
@@ -12,8 +13,14 @@ RUN apt-get update \
 RUN wget https://dot.net/v1/dotnet-install.sh \
     && bash ./dotnet-install.sh --channel ${DOTNET_VERSION} --install-dir ${DOTNET_ROOT} \
     && dotnet tool install Microsoft.dotnet-interactive --tool-path /opt/dotnet/tools \
-    && dotnet interactive jupyter install \
-    && fix-permissions "/home/${NB_USER}"
+    && mkdir ${DOTNET_KERNELS} \
+    && dotnet interactive jupyter install --path ${DOTNET_KERNELS} \
+    && jupyter kernelspec install ${DOTNET_KERNELS}/.net-csharp --sys-prefix \
+    && fix-permissions "/home/${NB_USER}" \
+    && fix-permissions "${DOTNET_KERNELS}" \
+    && fix-permissions "${CONDA_DIR}" 
+
+
 
 USER ${NB_USER}
 
@@ -31,9 +38,6 @@ RUN pip install numpy \
     pillow \
     Matplotlib \
     plotly \
-    calysto \
-    cairosvg \
-    cairocffi \
     && fix-permissions "${CONDA_DIR}" \
     && fix-permissions "/home/${NB_USER}"
 
