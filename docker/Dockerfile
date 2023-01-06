@@ -1,6 +1,7 @@
 FROM jupyter/minimal-notebook
 
 ARG DOTNET_VERSION=7.0
+ARG CVER=2.3
 ENV DOTNET_ROOT=/opt/dotnet
 ENV DOTNET_KERNELS=/opt/dotnet-kernels
 ENV PATH=${PATH}:${DOTNET_ROOT}:${DOTNET_ROOT}/tools
@@ -14,6 +15,7 @@ RUN wget https://dot.net/v1/dotnet-install.sh \
     && bash ./dotnet-install.sh --channel ${DOTNET_VERSION} --install-dir ${DOTNET_ROOT} \
     && dotnet tool install Microsoft.dotnet-interactive --tool-path /opt/dotnet/tools \
     && mkdir ${DOTNET_KERNELS} \
+    && touch ${DOTNET_KERNELS}/${CVER} \
     && dotnet interactive jupyter install --path ${DOTNET_KERNELS} \
     && jupyter kernelspec install ${DOTNET_KERNELS}/.net-csharp --sys-prefix \
     && fix-permissions "/home/${NB_USER}" \
