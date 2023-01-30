@@ -1,12 +1,14 @@
 FROM jupyter/minimal-notebook
 
 ARG DOTNET_VERSION=7.0
-ARG CVER=2.3
+ARG CVER=2.4
 ENV DOTNET_ROOT=/opt/dotnet
 ENV DOTNET_KERNELS=/opt/dotnet-kernels
 ENV PATH=${PATH}:${DOTNET_ROOT}:${DOTNET_ROOT}/tools
 
 USER root
+
+RUN echo ${CVER} > /etc/ContainerVersion.txt
 
 RUN apt-get update \
     && apt-get install -y libc6 libgcc-12-dev libgssapi-krb5-2 libicu-dev libssl3 libstdc++6 zlib1g
@@ -40,6 +42,8 @@ RUN pip install numpy \
     pillow \
     Matplotlib \
     plotly \
+    jedi-language-server \
+    calysto \
     && fix-permissions "${CONDA_DIR}" \
     && fix-permissions "/home/${NB_USER}"
 
