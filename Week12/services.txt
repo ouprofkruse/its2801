@@ -1,0 +1,4 @@
+DSL,66
+Cable (slow),350
+Cable (typical),500
+Cable (fast),800
