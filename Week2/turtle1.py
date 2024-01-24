@@ -3,6 +3,7 @@
 ### IMPORTANT:
 # you need to install a linux package before this can work:
 # in the terminal, type the command
+#     sudo apt update
 #     sudo apt install python3-tk
 # at the prompt type the same password you use to log into the VM
 # you will be asked
@@ -14,7 +15,7 @@
 # turtle to point up.
 # Add code to:
 # 1.) draw a black rectangle 50 pixels inside the screen border
-# 2.) draw a red triangle that is half the size of the first one, and
+# 2.) draw a red rectangle that is half the size of the first one, and
 #     centered inside it.
 
 # leave the next 3 lines as-is
