@@ -1,22 +1,21 @@
 # Used for testing of small code snippets
+# import turtle
+# colors = ("red","blue","green","yellow","brown","cyan")
+colors = ["red","blue","green"]
 
-#from turtle import *
-import turtle
+# colors.extend(("orange","black"))
+# for c in colors:
+#     print(c)
 
-height = turtle.window_height()
-width = turtle.window_width()
-print(width,height)
+for i in range(2,10,2):
+    print(i)
 
-turtle.up()
-turtle.setposition(-width/2,0)
-turtle.down()
-turtle.forward(width/2)
+# numbers = (5,4.9,-15.3)
+# c = max(numbers)
 
-turtle.color("red")
-turtle.up()
-turtle.setposition(-width/2,height/2)
-#turtle.right(45)
-turtle.down()
-turtle.goto(0,0)
+# a = 60
+# b = 31
 
-turtle.exitonclick()
+# c = min(a,b)
+
+# print(colors)
