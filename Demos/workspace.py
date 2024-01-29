@@ -1,21 +1,25 @@
 # Used for testing of small code snippets
-# import turtle
-# colors = ("red","blue","green","yellow","brown","cyan")
-colors = ["red","blue","green"]
+import turtle
+COLORS = ("red","lightblue","green","yellow","brown","cyan")
 
-# colors.extend(("orange","black"))
-# for c in colors:
-#     print(c)
+def draw_dots(my_size,my_position):
+    # size=999
+    # print (size)
+    turtle.up()
+    turtle.goto(my_position)
+    turtle.dot(my_size,"red")
+    turtle.setheading(90)
+    turtle.forward(my_size)
+    turtle.dot(my_size,"lightblue")
+    return turtle.position()
+    # my_size=999
+    # my_position[0]=123
 
-for i in range(2,10,2):
-    print(i)
+size = 20
+pos=[0,0]
+last = draw_dots(size,pos)
+print(last)
+# pos=[50,100]
+# draw_dots(size,pos)
 
-# numbers = (5,4.9,-15.3)
-# c = max(numbers)
-
-# a = 60
-# b = 31
-
-# c = min(a,b)
-
-# print(colors)
+turtle.exitonclick()
