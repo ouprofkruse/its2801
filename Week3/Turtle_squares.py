@@ -41,7 +41,7 @@ def draw_box(my_size,start_location,my_color):
 #  size = use either the min or the max function
 #
 # create variable to hold the position for the next square, the one below would be in the center of the screen,
-# you need to replace the "0"s with the correct values
+# you need to replace the "0"s with the correct values for the first square.
 top_left = [0,0]
 
 # Start your loop here
