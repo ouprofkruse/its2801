@@ -6,7 +6,7 @@ c_len = len(COLORS)
 
 n = 0
 x = 0
-while x > 0.9:
+while x <= 0.9:
     n += 1
     x = random.random()
 print(n)
