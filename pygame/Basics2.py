@@ -6,6 +6,16 @@ def place_npc(npc_rect,screen_dim):
     y = random.random()*screen_dim[1]
     npc_rect.center = (x,y)
 
+class Player(pygame.sprite.Sprite):
+    def __init__(self, image_file,screen_dim) -> None:
+        super().__init__()
+        self.original = pygame.image.load(image_file)
+        self.image = pygame.transform.scale(self.original,(64,64))
+        self.rect = self.image.get_rect()
+        self.rect.center = (screen_dim[0]/2,screen_dim[1]/2)
+    def update(self,screen):
+        screen.blit(self.image,self.rect)
+    
 pygame.init()
 #screen = pygame.display.set_mode((0,0), pygame.FULLSCREEN, 0, 1)
 screen = pygame.display.set_mode((1600,800))
@@ -16,10 +26,7 @@ V = .1
 
 #print(screen_size[1])
 
-eye_original = pygame.image.load("Images/eye.png")
-eye = pygame.transform.scale(eye_original,(64,64))
-eye_rect = eye.get_rect()
-eye_rect.center = (screen_size[0]/2,screen_size[1]/2)
+player = Player("Images/eye.png",screen_size)
 
 hood_original = pygame.image.load("Images/hood.png")
 hood = pygame.transform.scale(hood_original,(64,64))
@@ -46,20 +53,20 @@ while running:
     if keys[pygame.K_q]:
         running = False
     if keys[pygame.K_w]:
-        eye_rect.y -= increment[1]
+        player.rect.y -= increment[1]
     if keys[pygame.K_s]:
-        eye_rect.y += increment[1]
+        player.rect.y += increment[1]
     if keys[pygame.K_a]:
-        eye_rect.x -= increment[0]
+        player.rect.x -= increment[0]
     if keys[pygame.K_d]:
-        eye_rect.x += increment[0]
+        player.rect.x += increment[0]
     if keys[pygame.K_l]:
         print(screen_size,increment)
 
-    if eye_rect.colliderect(hood_rect):
+    if player.rect.colliderect(hood_rect):
         place_npc(hood_rect,screen_size)
         
-    screen.blit(eye,eye_rect)
+    player.update(screen)
     screen.blit(hood,hood_rect)
     
     pygame.display.flip()
