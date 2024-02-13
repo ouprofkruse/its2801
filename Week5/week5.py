@@ -42,17 +42,17 @@ height = turtle.window_height()
 width = turtle.window_width()
 # print(height,width)
 
-# Define a function draw the box.  How you pass values to the function
+# Define a function to draw the box.  How you pass values to the function
 # is up to you, "params" is a placeholder.
 def draw_box(params):
     pass
 
-# Define a function draw the triangle.  How you pass values to the function
+# Define a function to draw the triangle.  How you pass values to the function
 # is up to you, "params" is a placeholder.
 def draw_tri(params):
     pass
     
-# Define a function draw the line.  How you pass values to the function
+# Define a function to draw the line.  How you pass values to the function
 # is up to you, "params" is a placeholder.
 def draw_line(params):
     pass
