@@ -18,7 +18,7 @@ while True:
             print("Index must be 0 to",len(num)-1)
             continue
         except ZeroDivisionError:
-            print("Yoou can't divide by zero!")
+            print("You can't divide by zero!")
             continue
     # print("Again")
 
