@@ -46,12 +46,12 @@
 # - In the game loop, call the update method for each NPC
 #
 ###### Phase II - submitted a week after we return from Spring Break (Sunday night)
-# Phase II can use the "pygame-start" (Week 6) project to "borrow" code from
+# Phase II (you can "borrow" code from the "pygame-start" (Week 6) project)
 # If you submit any Phase II work in Phase I, I will give you feedback w/o any grading impact
 #
 # - Define an MC class
 # -- The __init__ method contains what we used to do in the "create" function
-#    Load the NPC image and retrieve the rectangle for it
+#    Load the MC image (hood64) and retrieve the rectangle for it
 #    Place the rectangle at the starting position
 #    Set a speed attribute for the MC
 # -- Define a "move" method to:
