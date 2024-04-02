@@ -1,4 +1,3 @@
-﻿double nInput = 1.83456;
-long iOutput = Convert.ToInt64(nInput);
-Console.WriteLine(nInput);
-Console.WriteLine(iOutput);
+﻿int[] ar = new int[4];
+Console.WriteLine(ar.Length);
+Console.WriteLine(ar[1]);
