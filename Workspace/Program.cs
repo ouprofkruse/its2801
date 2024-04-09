@@ -46,11 +46,7 @@
 // }
 // Console.WriteLine(cube(3));
 
-static class Cube
-{
-    static public double Volume(double l) {return l*l*l;}
-    static public double Area(double l) {return l*l;}
-}
+
 Console.WriteLine(Cube.Volume(3));
 Console.WriteLine(Cube.Area(3));
 
