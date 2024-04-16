@@ -7,19 +7,26 @@
 // enterprise.Torpedoes = 11;
 // Console.WriteLine(enterprise.Torpedoes);
 
-Coords location = new Coords(10,20);
-Console.WriteLine(location.X);
-Console.WriteLine(location.ToString());
-public struct Coords
-{
-    public Coords(double x, double y)
-    {
-        X = x;
-        Y = y;
-    }
+Romulan flagship = new Romulan("T'Met",4000,12,false);
+Console.WriteLine(flagship.ShipID());
+// flagship.CloaKStatus();
+flagship.Cloak();
+// flagship.CloaKStatus();
+Console.WriteLine(flagship.ShipID());
 
-    public double X { get; }
-    public double Y { get; }
+// Coords location = new Coords(10,20);
+// Console.WriteLine(location.X);
+// Console.WriteLine(location.ToString());
+// public struct Coords
+// {
+//     public Coords(double x, double y)
+//     {
+//         X = x;
+//         Y = y;
+//     }
 
-    public override string ToString() => $"({X}, {Y})";
-}
+//     public double X { get; }
+//     public double Y { get; }
+
+//     public override string ToString() => $"({X}, {Y})";
+// }
