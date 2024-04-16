@@ -3,7 +3,7 @@
 // default file created by dotnet.
 
 // In this file, code the "top level" statements 
-// -- Do NOT create a "program" class of a "main" method, this version of
+// -- Do NOT create a "program" class or a "main" method, this version of
 // dotnet does not require that.
 
 // -- Do NOT add "using system", this dotnet version does that automatically.
@@ -35,7 +35,7 @@
 //    store the location as a class property
 
 // -- Derive an "Enemy" class from the Ship class
-//    Call the base constructor and also intialize a bool cloak property - 
+//    Call the base constructor and also intialize a bool "cloak" property - 
 //    set the cloak property randomly to true or false.
 
 // -- Go back to the map class and 
@@ -50,7 +50,7 @@
 //         This method randomly places the enemy ship, taking care not
 //         to put it at a location that is already occupied by another ship (map is not ".")
 // ============
-// In this file
+// In this file (Program.cs)
 // constant
 const int DIM = 10;
 
