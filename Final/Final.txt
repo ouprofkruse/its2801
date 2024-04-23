@@ -1,0 +1,44 @@
+These instructions are going to be much more general than previous assignments;
+you will need to make your own design choices.
+
+* You can complete this assignemnt in python or C#.
+* You need to choose an appropriate structure for your script, meaning you
+  need to use classes, function/methods, and various data types in a way that makes sense
+  to you and follows the practices we have introduced throughout the seemster.
+
+Start with the functionality in the script you completed for Week 14 (you created a local
+  map with the Enterprise and a few enemy ships).
+
+For this assignment add the functionality below:
+
+At the time you create to map, add a starbase to the map (the original game used "#"
+as the symbol - you can use anything you'd like); when you place the ships, make 
+sure none of them end up next to the starbase.
+
+Randomly add 2-4 stars to the map (Use "*" as the symbol); stars can go into any
+unoccupied space.
+
+Add a game loop:
+When the game starts, give the user an input prompt on the console.
+The user can type the following commands:
+- srscan (can be abbreviated to srs): prints the current local map
+- move (can be abbreviated to m) to move the Enterprise
+    move requires a direction indicated as a number
+        0 -- move in the positive x direction (right)
+        90 -- move in the negative Y direction (up)
+        180 -- move in the negative x direction (left)
+        270 -- move in the positive y direction (down)
+    the user can add the direction to the move command, e.g. "move 90",
+    if the direction is missing, prompt the user to enter it.
+      If the direction is not one of the 4 numbers, you could round to
+      the nearest valid number, or prompt the user to reenter
+    The movement distance is always 1 square; each movement subtracts 100 units of energy
+      from the Enterprise.
+    If the movement would cause the Enterprise to collide with any object, you need
+      to issue a context-appropriate message and abort the move:
+      "Captain, we can't fly into a star"
+      "Captain, do you really want to ram the Klingon ship?"
+      "Captain, we can't ram a Startbase"
+    If the move command puts the Enterprise next to the Starbase, 
+      issue a "Docked at Starbase" message; the energy is restored to full.
+- quit (can be abbreviated to q) ask for confirmation, the exit the game.
